@@ -1,8 +1,7 @@
 import pandas as pd
 from elasticsearch import Elasticsearch, helpers
 
-df = pd.read_csv('concatenated_file.csv')
-# print(df)
+df = pd.read_csv('data1.csv')
 
 es = Elasticsearch(
     ['https://localhost:9200/'],
@@ -12,7 +11,7 @@ es = Elasticsearch(
 
 data = df.to_dict(orient='records')
 
-index_name = 'contact_table'
+index_name = 'data1_table'
 
 def gendata(data):
     for doc in data:
